@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainController {
-	@RequestMapping(value = "say", method = RequestMethod.GET)
+	@RequestMapping(value = "/FirstWebApp/say", method = RequestMethod.GET)
 	public String sayHello(@RequestParam("name") String id, Model model) {
 		System.out.println(id);
 		model.addAttribute("url", "world");
 		return "test";
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/FirstWebApp/", method = RequestMethod.GET)
 	public String index(Map<String, String> model) {
 		System.out.println("hello");
 		model.put("url", "456");
