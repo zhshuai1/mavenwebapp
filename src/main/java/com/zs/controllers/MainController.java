@@ -4,11 +4,14 @@ import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
+@SessionAttributes("merchantId")
 public class MainController {
 
 	// @RequestMapping(value = "/FirstWebApp/say", method = RequestMethod.GET)
@@ -30,5 +33,11 @@ public class MainController {
 		System.out.println("hello");
 		model.put("url", "456");
 		return "index";
+	}
+
+	@RequestMapping(value = "/sessionTest", method = RequestMethod.GET)
+	public String sessionTest(@ModelAttribute("merchantId") String merchantId) {
+		System.out.println(merchantId);
+		return "sessionTest";
 	}
 }
