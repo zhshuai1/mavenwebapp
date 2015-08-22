@@ -11,9 +11,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class MainController {
 
+	// @RequestMapping(value = "/FirstWebApp/say", method = RequestMethod.GET)
+	// public String sayHello(@RequestParam("name") String id, Model model) {
+	// System.out.println(id);
+	// model.addAttribute("url", "world");
+	// return "test";
+	// }
+
 	@RequestMapping(value = "/say", method = RequestMethod.GET)
 	public String sayHello2(@RequestParam("name") String id, Model model) {
-		System.out.println(id);
+		System.out.println(id + "2");
 		model.addAttribute("url", "world");
 		return "test";
 	}
