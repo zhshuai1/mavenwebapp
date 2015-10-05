@@ -31,5 +31,8 @@ ${sessionScope.merchantId}
  <form action="sessionTest">
  <input type="submit" value="Ìá½»"/>
  </form>
+ <img src="http://www.baidu.com/img/bdlogo.png"/>
+ <%=request.getContextPath()+"sdf"%>
+ 22
 </body>
 </html>
